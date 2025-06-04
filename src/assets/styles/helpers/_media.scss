@@ -1,0 +1,31 @@
+$bp-full-layout: 1293px;
+$bp-sidebar-collapse: 900px;
+
+@mixin above($bp) {
+	@media (min-width: #{($bp + 1)}) {
+		@content;
+	}
+}
+
+@mixin below($bp) {
+	@media (max-width: $bp) {
+		@content;
+	}
+}
+@mixin full-layout {
+	@media (min-width: $bp-full-layout) {
+		@content;
+	}
+}
+
+@mixin sidebar-collapsed {
+	@media (max-width: $bp-sidebar-collapse) {
+		@content;
+	}
+}
+
+@mixin sidebar-hidden {
+	.sidebar-hidden & {
+		display: none !important;
+	}
+}

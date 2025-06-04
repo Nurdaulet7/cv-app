@@ -1,0 +1,36 @@
+@use './helpers' as *;
+
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-main;
+    background-color: $color-background;
+    color: $color-text;
+    line-height: 1.6;
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+	transition: $transition-default;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+}
