@@ -29,3 +29,17 @@ $bp-sidebar-collapse: 900px;
 		display: none !important;
 	}
 }
+
+@mixin hover {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			@content;
+		}
+	}
+}

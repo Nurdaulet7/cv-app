@@ -1,0 +1,67 @@
+@use '@styles/helpers/index' as *;
+
+.home {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url('@/assets/images/background.png');
+	background-size: cover;
+	background-position: center;
+	padding-inline: 16px;
+	color: $color-light;
+
+	// Тёмный оверлей
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-color: rgba($color: $color-dark, $alpha: 0.7);
+		z-index: 0;
+	}
+
+	&__intro {
+		text-align: center;
+		max-width: 500px;
+		width: 100%;
+		position: relative;
+		z-index: 1;
+
+		& > *:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&_avatar {
+		margin: 0 auto;
+	}
+
+	&__name {
+		font-size: 45px;
+		font-weight: 700;
+	}
+
+	&__role {
+		font-size: 25px;
+		font-weight: 600;
+		color: var(--color-primary);
+	}
+
+	&__desc {
+		font-size: 14px;
+	}
+
+	&__button {
+		display: inline-block;
+		padding: 10px 24px;
+		background-color: var(--color-primary);
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 500;
+
+		@include hover {
+			background-color: var(--color-primary-dark);
+		}
+	}
+}

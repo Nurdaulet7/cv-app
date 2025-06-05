@@ -15,7 +15,8 @@
     "isolatedModules": true,
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["*"],
+      "@styles/*": ["./src/assets/styles/*"]
     }
   },
   "include": ["src"],
