@@ -1,0 +1,32 @@
+@use '@styles/helpers' as *;
+
+.button {
+	@include reset-button;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	background-color: $color-secondary;
+	min-width: 120px;
+	height: 40px;
+	border-radius: $border-radius;
+	padding-inline: 20px;
+	font-size: $font-size-base;
+	color: $color-light;
+
+	&--sm {
+		font-size: 14px;
+	}
+
+	&--md {
+		font-size: 16px;
+	}
+
+	&--lg {
+		font-size: 18px;
+	}
+
+	@include hover {
+		background-color: $color-primary;
+	}
+}

@@ -1,22 +1,22 @@
-.photo {
+.photoBox {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  display: block;
+  border: 1px solid white;
 }
 
-.small {
+.photoBox--small {
   width: 40px;
   height: 40px;
 }
 
-.medium {
+.photoBox--medium {
   width: 100px;
   height: 100px;
 }
 
-.large {
+.photoBox--large {
   width: 163px;
   height: 163px;
 }/*# sourceMappingURL=PhotoBox.module.css.map */

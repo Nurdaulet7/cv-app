@@ -2,19 +2,35 @@ import clsx from 'clsx';
 
 import styles from './PhotoBox.module.scss';
 
+type Size = 'small' | 'medium' | 'large';
 interface PhotoBoxProps {
 	src: string;
 	alt: string;
-	size?: 'small' | 'medium' | 'large';
+	size?: Size;
 	className?: string;
 }
 
-const PhotoBox = ({ src, alt, size = 'medium', className }: PhotoBoxProps) => {
+const sizeMap: Record<Size, number> = {
+	small: 40,
+	medium: 100,
+	large: 163,
+};
+
+const PhotoBox: React.FC<PhotoBoxProps> = ({
+	src,
+	alt,
+	size = 'medium',
+	className = '',
+}) => {
+	const sizeValue = sizeMap[size];
+
 	return (
 		<img
-			className={clsx(styles.photo, styles[size], className)}
 			src={src}
 			alt={alt}
+			width={sizeValue}
+			height={sizeValue}
+			className={clsx(styles.photoBox, styles[`photoBox--${size}`], className)}
 		/>
 	);
 };

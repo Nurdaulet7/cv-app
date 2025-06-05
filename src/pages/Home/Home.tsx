@@ -1,9 +1,19 @@
+import { useNavigate } from 'react-router-dom';
+
 import avatar from '@/assets/images/avatar_large.png';
+import Button from '@/components/Button/Button';
 import PhotoBox from '@/components/PhotoBox/PhotoBox';
+import { ROUTES } from '@/constants/routes';
 
 import styles from './Home.module.scss';
 
 const Home = () => {
+	const navigate = useNavigate();
+
+	const goToResume = () => {
+		navigate(ROUTES.RESUME);
+	};
+
 	return (
 		<main className={styles.home}>
 			<section className={styles['home__intro']}>
@@ -21,9 +31,7 @@ const Home = () => {
 					commodo ligula eget dolor. Aenean massa. Cum sociis natoque
 				</p>
 
-				<a href='/resume' className={styles['home__button']}>
-					View Resume
-				</a>
+				<Button onClick={goToResume} text='Know more' />
 			</section>
 		</main>
 	);
