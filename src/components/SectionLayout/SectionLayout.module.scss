@@ -1,0 +1,12 @@
+@use '@styles/helpers' as *;
+
+.section {
+	padding-block: 25px;
+
+	&__title {
+		font-size: $font-size-lg;
+		font-weight: 700;
+		color: $color-primary;
+		margin-bottom: 40px;
+	}
+}

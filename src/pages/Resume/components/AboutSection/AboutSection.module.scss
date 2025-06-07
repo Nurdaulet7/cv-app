@@ -1,0 +1,11 @@
+@use '@styles/helpers' as *;
+
+.about-section {
+	padding-top: 40px;
+
+	&__content {
+		& p {
+			font-size: $font-size-sm;
+		}
+	}
+}
