@@ -1,0 +1,29 @@
+@use '@styles/helpers' as *;
+
+.layout {
+	display: flex;
+	min-height: 100vh;
+
+	&__sidebar {
+		width: 250px;
+		transition: width 0.3s ease;
+
+		@include mobile {
+			width: 54px;
+		}
+
+		&--collapsed {
+			width: 0px;
+			transition: width 0.3s ease;
+		}
+	}
+
+	&__main {
+		flex: 1;
+		padding: 35px;
+
+		@include mobile {
+			padding-block: 24px;
+		}
+	}
+}

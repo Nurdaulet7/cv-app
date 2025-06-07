@@ -9,14 +9,6 @@
 	width: 100%;
 }
 
-.container.layout-main {
-	padding-block: 40px;
-
-	@include below(768) {
-		padding-block: 24px;
-	}
-}
-
 .visually-hidden {
 	position: absolute !important;
 	width: 1px !important;
@@ -31,7 +23,7 @@
 }
 
 .hidden-mobile {
-	@include below(900) {
+	@include mobile {
 		display: none !important;
 	}
 }
@@ -39,7 +31,7 @@
 .visible-mobile {
 	display: none !important;
 
-	@include below(900) {
+	@include mobile {
 		display: block !important;
 	}
 }

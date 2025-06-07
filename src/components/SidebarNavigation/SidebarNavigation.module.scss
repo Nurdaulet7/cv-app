@@ -1,0 +1,11 @@
+.navigation {
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	text-align: center;
+
+	& li {
+		list-style: none;
+	}
+}

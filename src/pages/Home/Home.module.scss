@@ -38,12 +38,14 @@
 	}
 
 	&__name {
-		font-size: 45px;
+		// font-size: 45px;
+		@include fluid-text(48, 35);
 		font-weight: 700;
 	}
 
 	&__role {
 		font-size: 25px;
+		@include fluid-text(28, 20);
 		font-weight: 600;
 		color: var(--color-primary);
 	}

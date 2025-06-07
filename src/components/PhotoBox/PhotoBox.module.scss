@@ -1,3 +1,5 @@
+@use '@styles/helpers' as *;
+
 .photoBox {
 	border-radius: 50%;
 	object-fit: cover;
@@ -5,14 +7,14 @@
 	border: 1px solid white;
 }
 
-.photoBox--small {
-	width: 40px;
-	height: 40px;
-}
-
 .photoBox--medium {
 	width: 100px;
 	height: 100px;
+
+	@include mobile {
+		width: 40px;
+		height: 40px;
+	}
 }
 
 .photoBox--large {
