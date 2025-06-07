@@ -29,12 +29,9 @@ const Button: React.FC<ButtonProps> = ({
 		<button
 			type={type}
 			onClick={onClick}
-			className={clsx(
-				styles.button,
-				styles[`button--${size}`],
-				{ [styles['button--with-icon']]: !!icon },
-				className
-			)}
+			className={clsx(className, styles.button, styles[`button--${size}`], {
+				[styles['button--with-icon']]: !!icon,
+			})}
 			disabled={disabled}
 			form={form}
 		>

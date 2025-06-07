@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 				}
 			>
 				<Sidebar
-					collapsed={collapsed}
+					isCollapsed={collapsed}
 					onToggle={() => setCollapsed(!collapsed)}
 				/>
 			</aside>

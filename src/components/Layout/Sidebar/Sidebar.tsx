@@ -1,25 +1,31 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import avatar from '@/assets/images/avatar_medium.png';
-import Button from '@/components/Button/Button';
+import Navigation from '@/components/Navigation/Navigation';
 import PhotoBox from '@/components/PhotoBox/PhotoBox';
-import SidebarNavigation from '@/components/SidebarNavigation/SidebarNavigation';
+import { ROUTES } from '@/constants/routes';
 import clsx from 'clsx';
 import { ChevronLeft } from 'lucide-react';
 
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
-	collapsed: boolean;
+	isCollapsed: boolean;
 	onToggle: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle }) => {
+	const navigate = useNavigate();
+	const goBack = () => {
+		navigate(ROUTES.HOME);
+	};
+
 	return (
 		<nav
 			className={clsx(
 				styles.sidebar,
-				collapsed && styles['sidebar--collapsed']
+				isCollapsed && styles['sidebar--collapsed']
 			)}
 		>
 			<button
@@ -27,7 +33,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
 				onClick={onToggle}
 				aria-label='Toggle sidebar'
 			>
-				{collapsed ? '☰' : '✖'}
+				{isCollapsed ? '☰' : '✖'}
 			</button>
 
 			<div className={styles.sidebar__content}>
@@ -40,9 +46,12 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
 					/>
 					<h3 className={styles['sidebar__avatar-name']}>John Doe</h3>
 				</div>
-				<SidebarNavigation />
+				<Navigation />
 
-				<Button text='Go back' icon={<ChevronLeft />} />
+				<button className={styles['sidebar__button']} onClick={goBack}>
+					<ChevronLeft />
+					<span>Go back</span>
+				</button>
 			</div>
 		</nav>
 	);

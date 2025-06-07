@@ -1,1 +1,5 @@
-/*# sourceMappingURL=Resume.module.css.map */
+.section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  scroll-margin-top: 60px;
+}/*# sourceMappingURL=Resume.module.css.map */
