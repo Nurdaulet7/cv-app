@@ -1,0 +1,13 @@
+.expertise {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.expertise__item {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+.expertise__item-left {
+  width: 90px;
+}/*# sourceMappingURL=Expertise.module.css.map */

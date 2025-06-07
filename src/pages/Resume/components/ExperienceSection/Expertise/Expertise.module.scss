@@ -1,0 +1,22 @@
+@use '@styles/helpers' as *;
+
+.expertise {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	&__item {
+		width: 100%;
+		display: flex;
+		column-gap: 30px;
+		row-gap: 10px;
+
+		&-left {
+			min-width: 90px;
+		}
+
+		@include mobile {
+			flex-wrap: wrap;
+		}
+	}
+}
