@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { useActiveSection } from '@/hooks/useActiveSection';
 import clsx from 'clsx';
 import {
 	BriefcaseBusiness,
@@ -7,58 +8,37 @@ import {
 	GraduationCap,
 	LucideIcon,
 	MessageCircle,
+	Navigation as NavigationIcon,
 	Pencil,
 	User,
-	Navigation as navigationIcon,
 } from 'lucide-react';
 
 import styles from './Navigation.module.scss';
 
-interface NavItem {
+interface NavigationItem {
 	label: string;
 	href: string;
 	icon: LucideIcon;
 }
 
-const navItems: NavItem[] = [
+const NAVIGATION_ITEMS: NavigationItem[] = [
 	{ label: 'About me', href: '#about', icon: User },
 	{ label: 'Education', href: '#education', icon: GraduationCap },
 	{ label: 'Experience', href: '#experience', icon: Pencil },
 	{ label: 'Skills', href: '#skills', icon: Gem },
 	{ label: 'Portfolio', href: '#portfolio', icon: BriefcaseBusiness },
-	{ label: 'Contacts', href: '#contacts', icon: navigationIcon },
+	{ label: 'Contacts', href: '#contacts', icon: NavigationIcon },
 	{ label: 'Feedbacks', href: '#feedbacks', icon: MessageCircle },
 ];
 
 const Navigation: React.FC = () => {
-	const [activeId, setActiveId] = useState<string>('');
-
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						setActiveId(`#${entry.target.id}`);
-					}
-				});
-			},
-			{
-				threshold: 0.6,
-			}
-		);
-
-		const sections = document.querySelectorAll('section');
-		sections.forEach((section) => observer.observe(section));
-
-		return () => {
-			sections.forEach((section) => observer.unobserve(section));
-		};
-	}, []);
+	const activeId = useActiveSection();
+	console.log(activeId);
 
 	return (
 		<nav className={styles.navigation}>
 			<ul className={styles.navigation__list}>
-				{navItems.map(({ label, href, icon: Icon }) => (
+				{NAVIGATION_ITEMS.map(({ label, href, icon: Icon }) => (
 					<li key={href} className={styles.navigation__item}>
 						<a
 							href={href}
