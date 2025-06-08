@@ -1,0 +1,71 @@
+@use '@styles/helpers' as *;
+
+.timeline {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	list-style: none;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		content: '';
+		background-color: $color-primary;
+		width: 5px;
+		height: 100%;
+		left: 20px;
+		z-index: 1;
+	}
+
+	&__item {
+		display: flex;
+		align-items: flex-start;
+		gap: 25px;
+	}
+
+	&__left {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		aspect-ratio: 1;
+		background-color: $color-background;
+		padding: 15px;
+		z-index: 5;
+	}
+
+	&__date {
+		font-weight: 700;
+		font-size: $font-size-base;
+	}
+
+	&__card {
+		position: relative;
+		background-color: $color-gray;
+		padding: 15px;
+		flex: 1;
+
+		&::before {
+			content: '';
+			width: 20px;
+			height: 20px;
+			background-color: $color-gray;
+			position: absolute;
+
+			left: -10px;
+			rotate: 45deg;
+
+			scale: 0.6;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: $font-size-base;
+		margin-bottom: 5px;
+	}
+
+	&__text {
+		font-size: $font-size-sm;
+	}
+}
