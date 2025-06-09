@@ -3,6 +3,7 @@ import Layout from '@/components/Layout/Layout';
 import AboutSection from './components/AboutSection/AboutSection';
 import EducationSection from './components/EducationSection/EducationSection';
 import ExperienceSection from './components/ExperienceSection/ExperienceSection';
+import PortfolioSection from './components/PortfolioSection/PortfolioSection';
 
 import styles from './Resume.module.scss';
 
@@ -12,6 +13,7 @@ const Resume = () => {
 			<AboutSection />
 			<EducationSection />
 			<ExperienceSection />
+			<PortfolioSection />
 		</Layout>
 	);
 };

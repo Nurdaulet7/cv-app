@@ -7,14 +7,10 @@ $bp-sidebar-collapse: 900px;
 	}
 }
 
-$desktop-above: 1281px;
 $desktop: 1280px;
-
-$tablet-above: 1024px;
 $tablet: 1023px;
-
-$mobile-above: 768px;
 $mobile: 767px;
+$mobile-s: 667px;
 
 @mixin desktop {
 	@media (max-width: $desktop) {
@@ -30,6 +26,12 @@ $mobile: 767px;
 
 @mixin mobile {
 	@media (max-width: $mobile) {
+		@content;
+	}
+}
+
+@mixin mobile-s {
+	@media (max-width: $mobile-s) {
 		@content;
 	}
 }
