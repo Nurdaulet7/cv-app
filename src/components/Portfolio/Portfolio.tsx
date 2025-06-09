@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 
 import clsx from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import PortfolioInfo from './PortfolioInfo/PortfolioInfo';
 import { PortfolioItem, portfolioItems } from './data';
@@ -46,14 +47,25 @@ const Portfolio: React.FC = () => {
 				className={clsx(styles.portfolio__items, 'grid', 'grid--3')}
 				role='list'
 			>
-				{filteredItems.map((item: PortfolioItem) => (
-					<PortfolioInfo
-						key={item.id}
-						title={item.title}
-						text={item.description}
-						url={item.url}
-					/>
-				))}
+				<AnimatePresence mode='sync'>
+					{filteredItems.map((item: PortfolioItem) => (
+						<motion.div
+							key={item.id}
+							layout
+							initial={{ opacity: 0, scale: 0.9 }}
+							animate={{ opacity: 1, scale: 1 }}
+							exit={{ opacity: 0, scale: 0.9 }}
+							transition={{ duration: 0.3 }}
+						>
+							<PortfolioInfo
+								key={item.id}
+								title={item.title}
+								text={item.description}
+								url={item.url}
+							/>
+						</motion.div>
+					))}
+				</AnimatePresence>
 			</div>
 		</div>
 	);

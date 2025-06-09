@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './PortfolioInfo.module.scss';
 
@@ -9,13 +9,19 @@ interface Props {
 }
 
 const PortfolioInfo: React.FC<Props> = ({ title, text, url }) => {
+	const [loaded, setLoaded] = useState(false);
+
 	return (
 		<article className={styles['portfolio-info']}>
 			<div className={styles['portfolio-info__image-wrapper']}>
 				<img
 					src={url}
 					alt={title}
-					className={styles['portfolio-info__image']}
+					loading='lazy'
+					onLoad={() => setLoaded(true)}
+					className={`${styles['portfolio-info__image']} ${
+						loaded ? styles['portfolio-info__image--loaded'] : ''
+					}`}
 				/>
 
 				<div className={styles['portfolio-info__overlay']}>

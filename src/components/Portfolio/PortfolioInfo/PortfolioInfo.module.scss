@@ -4,11 +4,10 @@
 	position: relative;
 	overflow: hidden;
 	border: 1.5px solid $color-border;
-	min-height: 190px;
+	// min-height: 180px;
 
 	&:hover {
 		.portfolio-info__overlay {
-			opacity: 1;
 			transform: translateY(0);
 		}
 	}
@@ -24,6 +23,11 @@
 		height: 100%;
 		object-fit: cover;
 		display: block;
+		opacity: 0;
+		transition: opacity 0.5s ease;
+		&--loaded {
+			opacity: 1;
+		}
 	}
 
 	&__overlay {
@@ -39,9 +43,12 @@
 		align-items: flex-start;
 		justify-content: flex-end;
 		padding: 20px 15px;
-		opacity: 0;
 		transform: translateY(100%);
 		transition: $transition-default;
+
+		@include mobile {
+			padding: 10px;
+		}
 	}
 
 	&__title {
