@@ -5,33 +5,50 @@
 	flex-direction: column;
 	gap: 10px;
 	list-style: none;
+	height: 40vh;
+	max-height: 80vh;
+	overflow-y: auto;
 	position: relative;
 
-	&::before {
-		position: absolute;
-		content: '';
-		background-color: $color-primary;
-		width: 5px;
-		height: 100%;
-		left: 20px;
-		z-index: 1;
+	scrollbar-width: thin;
+	scrollbar-color: $color-gray transparent;
+
+	&::-webkit-scrollbar {
+		width: 6px;
 	}
 
 	&__item {
 		display: flex;
 		align-items: flex-start;
 		gap: 25px;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 19px;
+			top: 0;
+			bottom: -10px;
+			width: 5px;
+			background-color: $color-primary;
+			z-index: 0;
+		}
+
+		&:last-child::before {
+			display: none;
+		}
 	}
 
 	&__left {
+		position: relative;
+		width: 40px;
+		aspect-ratio: 1;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 40px;
-		aspect-ratio: 1;
 		background-color: $color-background;
 		padding: 15px;
-		z-index: 5;
+		z-index: 1;
 	}
 
 	&__date {
