@@ -5,8 +5,6 @@ import EducationSection from './components/EducationSection/EducationSection';
 import ExperienceSection from './components/ExperienceSection/ExperienceSection';
 import PortfolioSection from './components/PortfolioSection/PortfolioSection';
 
-import styles from './Resume.module.scss';
-
 const Resume = () => {
 	return (
 		<Layout>
