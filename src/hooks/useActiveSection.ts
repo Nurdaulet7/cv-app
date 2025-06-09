@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 export const useActiveSection = (
 	sectionSelector = 'section',
-	threshold = 0.6
+	threshold = 0.4
 ) => {
 	const [activeId, setActiveId] = useState<string>('');
 
