@@ -1,0 +1,20 @@
+@use '@styles/helpers' as *;
+
+.skill {
+	height: 30px;
+	overflow: hidden;
+	position: relative;
+
+	&__bar {
+		background-color: $color-primary;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		padding-left: 15px;
+		color: white;
+	}
+
+	&__label {
+		font-size: $font-size-base;
+	}
+}

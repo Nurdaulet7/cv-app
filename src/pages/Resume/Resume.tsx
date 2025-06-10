@@ -4,6 +4,7 @@ import AboutSection from './components/AboutSection/AboutSection';
 import EducationSection from './components/EducationSection/EducationSection';
 import ExperienceSection from './components/ExperienceSection/ExperienceSection';
 import PortfolioSection from './components/PortfolioSection/PortfolioSection';
+import SkillSection from './components/SkillSection/SkillSection';
 
 const Resume = () => {
 	return (
@@ -11,6 +12,7 @@ const Resume = () => {
 			<AboutSection />
 			<EducationSection />
 			<ExperienceSection />
+			<SkillSection />
 			<PortfolioSection />
 		</Layout>
 	);
