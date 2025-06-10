@@ -19,9 +19,9 @@ interface ExperienceProps {
 
 const Expertise: React.FC<ExperienceProps> = ({ data }) => {
 	return (
-		<div className={styles.expertise}>
+		<ul className={styles.expertise}>
 			{data.map(({ date, info }, index) => (
-				<article key={index} className={styles.expertise__item}>
+				<li key={index} className={styles.expertise__item}>
 					<div className={styles['expertise__item-left']}>
 						<h3 className={styles.expertise__title}>{info.company}</h3>
 						<p>{date}</p>
@@ -30,9 +30,9 @@ const Expertise: React.FC<ExperienceProps> = ({ data }) => {
 						<h3 className={styles.expertise__title}>{info.job}</h3>
 						<p>{info.description}</p>
 					</div>
-				</article>
+				</li>
 			))}
-		</div>
+		</ul>
 	);
 };
 

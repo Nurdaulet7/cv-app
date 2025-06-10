@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaChevronLeft } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 
 import avatar from '@/assets/images/avatar_medium.png';
@@ -6,7 +7,6 @@ import Navigation from '@/components/Navigation/Navigation';
 import PhotoBox from '@/components/PhotoBox/PhotoBox';
 import { ROUTES } from '@/constants/routes';
 import clsx from 'clsx';
-import { ChevronLeft } from 'lucide-react';
 
 import styles from './Sidebar.module.scss';
 
@@ -49,7 +49,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle }) => {
 				<Navigation />
 
 				<button className={styles['sidebar__button']} onClick={goBack}>
-					<ChevronLeft />
+					<FaChevronLeft />
 					<span>Go back</span>
 				</button>
 			</div>

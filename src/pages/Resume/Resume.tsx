@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout/Layout';
 
 import AboutSection from './components/AboutSection/AboutSection';
+import ContactSection from './components/ContactSection/ContactSection';
 import EducationSection from './components/EducationSection/EducationSection';
 import ExperienceSection from './components/ExperienceSection/ExperienceSection';
 import PortfolioSection from './components/PortfolioSection/PortfolioSection';
@@ -14,6 +15,7 @@ const Resume = () => {
 			<ExperienceSection />
 			<SkillSection />
 			<PortfolioSection />
+			<ContactSection />
 		</Layout>
 	);
 };

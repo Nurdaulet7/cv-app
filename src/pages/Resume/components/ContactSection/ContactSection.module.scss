@@ -1,0 +1,38 @@
+@use '@styles/helpers' as *;
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	list-style: none;
+	&__item {
+		margin-bottom: 20px;
+	}
+}
+
+.contact {
+	display: inline-flex;
+	align-items: center;
+	gap: 20px;
+	text-decoration: none;
+	color: $color-text;
+
+	&__icon {
+		font-size: 30px;
+		color: $color-primary;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__text {
+		font-size: $font-size-base;
+
+		&-span {
+			color: $color-muted;
+		}
+	}
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

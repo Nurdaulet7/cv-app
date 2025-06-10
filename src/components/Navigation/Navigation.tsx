@@ -1,34 +1,27 @@
-import { useEffect, useState } from 'react';
+import { IconType } from 'react-icons';
+import { BiSolidMessageRoundedDetail, BiSolidNavigation } from 'react-icons/bi';
+import { BsBriefcaseFill } from 'react-icons/bs';
+import { FaGem, FaGraduationCap, FaPencilAlt, FaUser } from 'react-icons/fa';
 
 import { useActiveSection } from '@/hooks/useActiveSection';
 import clsx from 'clsx';
-import {
-	BriefcaseBusiness,
-	Gem,
-	GraduationCap,
-	LucideIcon,
-	MessageCircle,
-	Navigation as NavigationIcon,
-	Pencil,
-	User,
-} from 'lucide-react';
 
 import styles from './Navigation.module.scss';
 
 interface NavigationItem {
 	label: string;
 	href: string;
-	icon: LucideIcon;
+	icon: IconType;
 }
 
 const NAVIGATION_ITEMS: NavigationItem[] = [
-	{ label: 'About me', href: '#about', icon: User },
-	{ label: 'Education', href: '#education', icon: GraduationCap },
-	{ label: 'Experience', href: '#experience', icon: Pencil },
-	{ label: 'Skills', href: '#skills', icon: Gem },
-	{ label: 'Portfolio', href: '#portfolio', icon: BriefcaseBusiness },
-	{ label: 'Contacts', href: '#contacts', icon: NavigationIcon },
-	{ label: 'Feedbacks', href: '#feedbacks', icon: MessageCircle },
+	{ label: 'About me', href: '#about', icon: FaUser },
+	{ label: 'Education', href: '#education', icon: FaGraduationCap },
+	{ label: 'Experience', href: '#experience', icon: FaPencilAlt },
+	{ label: 'Skills', href: '#skills', icon: FaGem },
+	{ label: 'Portfolio', href: '#portfolio', icon: BsBriefcaseFill },
+	{ label: 'Contacts', href: '#contacts', icon: BiSolidNavigation },
+	{ label: 'Feedbacks', href: '#feedbacks', icon: BiSolidMessageRoundedDetail },
 ];
 
 const Navigation: React.FC = () => {
