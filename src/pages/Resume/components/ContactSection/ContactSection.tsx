@@ -7,12 +7,12 @@ import { contacts } from './contactData';
 
 import styles from './ContactSection.module.scss';
 
-const ContactSection = () => {
+const ContactSection: React.FC = () => {
 	return (
 		<SectionLayout id='contacts' title='Contacts'>
 			<ul className={styles.contacts}>
 				{contacts.map((contact) => (
-					<li className={styles.contacts__item}>
+					<li key={contact.type}>
 						<ContactItem key={contact.value} {...contact} />
 					</li>
 				))}

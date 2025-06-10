@@ -1,0 +1,30 @@
+@use '@styles/helpers' as *;
+
+.backToTop {
+	@include reset-button;
+	position: fixed;
+	bottom: 0px;
+	right: 20px;
+
+	width: 30px;
+	height: 30px;
+	border-radius: $border-radius $border-radius 0 0;
+
+	background-color: $color-secondary;
+	color: $color-light;
+	opacity: 0;
+	transform: translateY(20px);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&--visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	&:hover {
+		background-color: $color-primary;
+	}
+}

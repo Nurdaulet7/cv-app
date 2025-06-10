@@ -24,14 +24,12 @@ const ContactItem: React.FC<Props> = ({ label, value, href, icon: Icon }) => {
 			<div className={styles.contact__text}>
 				{label ? (
 					<>
-						<strong>{label}</strong>
+						<span className={styles.contact__label}>{label}</span>
 						<br />
 						<span className={styles['contact__text-span']}>{value}</span>
 					</>
 				) : (
-					<span>
-						<strong>{value}</strong>
-					</span>
+					<span className={styles.contact__label}>{value}</span>
 				)}
 			</div>
 		</a>

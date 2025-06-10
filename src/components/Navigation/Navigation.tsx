@@ -26,7 +26,6 @@ const NAVIGATION_ITEMS: NavigationItem[] = [
 
 const Navigation: React.FC = () => {
 	const activeId = useActiveSection();
-	console.log(activeId);
 
 	return (
 		<nav className={styles.navigation}>

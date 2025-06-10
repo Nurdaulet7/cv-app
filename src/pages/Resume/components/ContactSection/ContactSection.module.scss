@@ -5,9 +5,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	list-style: none;
-	&__item {
-		margin-bottom: 20px;
-	}
+	gap: 20px;
 }
 
 .contact {
@@ -22,6 +20,10 @@
 		color: $color-primary;
 		display: flex;
 		justify-content: center;
+	}
+
+	&__label {
+		font-weight: 700;
 	}
 
 	&__text {
