@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import styles from './Button.module.scss';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	text: string;
 	icon?: React.ReactNode;
 	className?: string;

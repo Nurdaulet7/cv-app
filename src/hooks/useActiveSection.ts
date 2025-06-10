@@ -10,8 +10,6 @@ export const useActiveSection = (sectionSelector = 'section') => {
 
 		if (!sections.length) return;
 
-		let observer: IntersectionObserver;
-
 		const handleIntersect = (entries: IntersectionObserverEntry[]) => {
 			for (const entry of entries) {
 				if (entry.isIntersecting && entry.target.id) {
@@ -21,10 +19,13 @@ export const useActiveSection = (sectionSelector = 'section') => {
 			}
 		};
 
-		observer = new IntersectionObserver(handleIntersect, {
-			threshold: 0.3,
-			rootMargin: '0px 0px -30% 0px',
-		});
+		const observer: IntersectionObserver = new IntersectionObserver(
+			handleIntersect,
+			{
+				threshold: 0.3,
+				rootMargin: '0px 0px -30% 0px',
+			}
+		);
 
 		sections.forEach((section) => observer.observe(section));
 

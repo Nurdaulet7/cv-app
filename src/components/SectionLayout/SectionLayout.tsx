@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import styles from './SectionLayout.module.scss';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import BackToTop from '../BackToTop/BackToTop';
 import Sidebar from './Sidebar/Sidebar';

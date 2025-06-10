@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaChevronUp } from 'react-icons/fa6';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import styles from './BackToTop.module.scss';
 

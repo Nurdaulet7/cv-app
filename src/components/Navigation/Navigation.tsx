@@ -4,7 +4,7 @@ import { BsBriefcaseFill } from 'react-icons/bs';
 import { FaGem, FaGraduationCap, FaPencilAlt, FaUser } from 'react-icons/fa';
 
 import { useActiveSection } from '@/hooks/useActiveSection';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import styles from './Navigation.module.scss';
 

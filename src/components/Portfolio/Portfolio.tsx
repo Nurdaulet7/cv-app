@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import PortfolioInfo from './PortfolioInfo/PortfolioInfo';

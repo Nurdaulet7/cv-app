@@ -8,7 +8,7 @@ const SkillScale: React.FC = () => {
 	return (
 		<div className={styles.scale}>
 			<div className={styles.scale__line}>
-				{levels.map((level, index) => (
+				{levels.map((level) => (
 					<div key={level} className={styles.scale__point}>
 						<span className={styles.scale__label}>{level}</span>
 					</div>

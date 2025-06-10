@@ -6,7 +6,7 @@ import avatar from '@/assets/images/avatar_medium.png';
 import Navigation from '@/components/Navigation/Navigation';
 import PhotoBox from '@/components/PhotoBox/PhotoBox';
 import { ROUTES } from '@/constants/routes';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import styles from './Sidebar.module.scss';
 
