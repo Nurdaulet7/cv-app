@@ -1,32 +1,15 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { STATUS } from '@/constants/status';
+import { createSlice } from '@reduxjs/toolkit';
 
-export interface EducationItem {
-	date: string;
-	title: string;
-	description: string;
-}
+import { EducationState } from './types';
 
-interface EducationState {
-	items: EducationItem[];
-	status: 'idle' | 'loading' | 'succeeded' | 'failed';
-	error: string | null;
-}
+import { fetchEducations } from './thunk';
 
 const initialState: EducationState = {
 	items: [],
-	status: 'idle',
+	status: STATUS.IDLE,
 	error: null,
 };
-
-export const fetchEducations = createAsyncThunk(
-	'education/fetchEducations',
-	async () => {
-		const res = await fetch('/api/educations');
-		if (!res.ok) throw new Error('Failed to fetch educations');
-		const data = await res.json();
-		return data as EducationItem[];
-	}
-);
 
 // Slice
 const educationSlice = createSlice({
@@ -36,15 +19,15 @@ const educationSlice = createSlice({
 	extraReducers: (builder) => {
 		builder
 			.addCase(fetchEducations.pending, (state) => {
-				state.status = 'loading';
+				state.status = STATUS.LOADING;
 				state.error = null;
 			})
 			.addCase(fetchEducations.fulfilled, (state, action) => {
-				state.status = 'succeeded';
+				state.status = STATUS.SUCCEEDED;
 				state.items = action.payload;
 			})
 			.addCase(fetchEducations.rejected, (state, action) => {
-				state.status = 'failed';
+				state.status = STATUS.FAILED;
 				state.error = action.error.message || 'Unknown error';
 			});
 	},
