@@ -22,11 +22,6 @@ export class ApiService {
 				throw new Error(`[${response.status}] ${errorText}`);
 			}
 
-			const contentLength = response.headers.get('content-length');
-			if (!contentLength || parseInt(contentLength) === 0) {
-				return null as T;
-			}
-
 			return response.json() as Promise<T>;
 		} catch (error) {
 			console.error('API Error:', error);
