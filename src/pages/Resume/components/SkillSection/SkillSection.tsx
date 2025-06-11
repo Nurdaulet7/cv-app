@@ -11,7 +11,7 @@ const SkillSection: React.FC = () => {
 		<SectionLayout id='skills' title='Skills'>
 			<div className={styles.skills}>
 				{skills.map((skill) => (
-					<SkillItem key={skill.name} name={skill.name} level={skill.level} />
+					<SkillItem key={skill.name} name={skill.name} level={skill.range} />
 				))}
 			</div>
 			<SkillScale />
