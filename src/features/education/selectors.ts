@@ -1,4 +1,4 @@
-import { RootState } from '@/app/store';
+import { RootState } from '@/store/store';
 
 export const selectEducations = (state: RootState) => state.education.items;
 export const selectEducationStatus = (state: RootState) =>

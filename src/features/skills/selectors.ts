@@ -1,4 +1,4 @@
-import { RootState } from '@/app/store';
+import { RootState } from '@/store/store';
 
 export const selectSkills = (state: RootState) => state.skills.items;
 export const selectSkillsStatus = (state: RootState) => state.skills.status;
