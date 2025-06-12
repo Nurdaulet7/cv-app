@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { CgSpinnerTwo } from 'react-icons/cg';
 
+import EmptyState from '@/components/EmptyState/EmptyState';
 import SectionLayout from '@/components/SectionLayout/SectionLayout';
+import StatusBlock from '@/components/Status/StatusBlock';
 import Timeline from '@/components/Timline/Timeline';
-import { STATUS } from '@/constants/status';
 import {
 	selectEducationError,
 	selectEducationStatus,
@@ -13,12 +13,10 @@ import { fetchEducations } from '@/features/education/thunk';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
 import { useAppSelector } from '@/hooks/useAppSelector';
 
-import styles from './EducationSection.module.scss';
-
 const EducationSection = () => {
 	const dispatch = useAppDispatch();
 
-	const education = useAppSelector(selectEducations);
+	const educations = useAppSelector(selectEducations);
 	const status = useAppSelector(selectEducationStatus);
 	const error = useAppSelector(selectEducationError);
 
@@ -28,21 +26,13 @@ const EducationSection = () => {
 
 	return (
 		<SectionLayout id='education' title='Education'>
-			{status === STATUS.LOADING && (
-				<div className={styles.education__loading}>
-					<CgSpinnerTwo className={styles.education__spinner} />
-				</div>
-			)}
-
-			{status === STATUS.FAILED && (
-				<div className={styles.education__error}>
-					Something went wrong. Please check your connection.
-					<br />
-					{error}
-				</div>
-			)}
-
-			{status === STATUS.SUCCEEDED && <Timeline data={education} />}
+			<StatusBlock status={status} error={error}>
+				{educations.length === 0 ? (
+					<EmptyState message='No data found.' />
+				) : (
+					<Timeline data={educations} />
+				)}
+			</StatusBlock>
 		</SectionLayout>
 	);
 };

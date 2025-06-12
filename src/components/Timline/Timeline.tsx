@@ -13,10 +13,6 @@ interface TimelineProps {
 }
 
 const Timeline: React.FC<TimelineProps> = ({ data }) => {
-	if (!Array.isArray(data)) {
-		return null; // или сообщение об ошибке
-	}
-
 	return (
 		<ul className={styles.timeline}>
 			{data.map(({ date, title, description }) => (

@@ -1,16 +1,12 @@
 @use '@styles/helpers' as *;
 
-.education {
-	&__loading,
-	&__error {
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 200px;
-		font-size: $font-size-base;
-		color: $color-danger;
-	}
+.status {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 200px;
+	font-size: $font-size-base;
+	color: $color-danger;
 
 	&__spinner {
 		font-size: 30px;

@@ -48,8 +48,11 @@ export function makeServer() {
 			// skills endpoints
 			this.get('/skills', () => {
 				return [
-					{ name: 'React', range: 80 },
-					{ name: 'TypeScript', range: 70 },
+					{ name: 'React', range: 90 },
+					{ name: 'TypeScript', range: 85 },
+					{ name: 'HTML/CSS', range: 95 },
+					{ name: 'SCSS', range: 90 },
+					{ name: 'Git', range: 80 },
 				];
 			});
 
