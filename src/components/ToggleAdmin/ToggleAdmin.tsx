@@ -1,5 +1,4 @@
-import { FiUserCheck } from 'react-icons/fi';
-import { FiUserX } from 'react-icons/fi';
+import { FiUserCheck, FiUserX } from 'react-icons/fi';
 
 import { toggleAdmin } from '@/features/auth/authSlice';
 import { selectIsAdmin } from '@/features/auth/selectors';

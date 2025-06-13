@@ -11,6 +11,6 @@ export const fetchEducations = createAsyncThunk<
 	try {
 		return await EducationApi.getAll();
 	} catch (error) {
-		return thunkAPI.rejectWithValue('Failed to fetch education data');
+		return thunkAPI.rejectWithValue(`Failed to fetch education data: ${error}`);
 	}
 });

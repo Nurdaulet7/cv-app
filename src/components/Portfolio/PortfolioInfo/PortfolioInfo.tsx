@@ -12,8 +12,8 @@ const PortfolioInfo: React.FC<Props> = ({ title, text, url }) => {
 	const [loaded, setLoaded] = useState(false);
 
 	return (
-		<li className={styles['portfolio-info']}>
-			<article className={styles['portfolio-info__image-wrapper']}>
+		<article className={styles['portfolio-info']}>
+			<div className={styles['portfolio-info__image-wrapper']}>
 				<img
 					src={url}
 					alt={title}
@@ -36,8 +36,8 @@ const PortfolioInfo: React.FC<Props> = ({ title, text, url }) => {
 						View resource
 					</a>
 				</div>
-			</article>
-		</li>
+			</div>
+		</article>
 	);
 };
 

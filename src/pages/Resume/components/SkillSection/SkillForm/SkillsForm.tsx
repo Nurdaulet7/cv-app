@@ -5,12 +5,15 @@ import { selectSkills } from '@/features/skills/selectors';
 import { addSkill } from '@/features/skills/thunk';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
 import { useAppSelector } from '@/hooks/useAppSelector';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 
 import FormikInput from './FormikInput/FormikInput';
 
 import styles from './SkillsForms.module.scss';
+
+const MINIMUM_RANGE = 10;
+const MAXIMUM_RANGE = 100;
 
 interface FormValues {
 	name: string;
@@ -23,7 +26,7 @@ const SkillsForm: React.FC = () => {
 
 	const initialValues: FormValues = {
 		name: '',
-		range: 10,
+		range: MAXIMUM_RANGE,
 	};
 
 	const validationSchema = Yup.object().shape({
@@ -36,8 +39,8 @@ const SkillsForm: React.FC = () => {
 			),
 		range: Yup.number()
 			.required('Range is required')
-			.min(10, 'Minimum range is 10')
-			.max(100, 'Maximum range is 100'),
+			.min(MINIMUM_RANGE, `Minimum range is ${MINIMUM_RANGE}`)
+			.max(MAXIMUM_RANGE, `Maximum range is ${MAXIMUM_RANGE}`),
 	});
 
 	const handleSubmit = async (
@@ -55,7 +58,7 @@ const SkillsForm: React.FC = () => {
 				validationSchema={validationSchema}
 				onSubmit={handleSubmit}
 			>
-				{({ errors, touched, isSubmitting }) => (
+				{({ isSubmitting }) => (
 					<Form className={styles.form__body}>
 						<FormikInput
 							name='name'

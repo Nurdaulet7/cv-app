@@ -11,7 +11,7 @@ export const fetchSkills = createAsyncThunk<
 	try {
 		return await SkillsApi.getAll();
 	} catch (error) {
-		return thunkAPI.rejectWithValue('Failed to load skills');
+		return thunkAPI.rejectWithValue(`Failed to load skills ${error}`);
 	}
 });
 
@@ -24,6 +24,6 @@ export const addSkill = createAsyncThunk<
 		const newSkill = await SkillsApi.add(payload);
 		return newSkill;
 	} catch (error) {
-		return thunkAPI.rejectWithValue('Failed to add skill');
+		return thunkAPI.rejectWithValue(`Failed to add skill: ${error}`);
 	}
 });

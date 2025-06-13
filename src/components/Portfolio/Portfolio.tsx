@@ -43,7 +43,7 @@ const Portfolio: React.FC = () => {
 				))}
 			</nav>
 
-			<ul
+			<div
 				className={clsx(styles.portfolio__items, 'grid', 'grid--3')}
 				role='list'
 			>
@@ -66,7 +66,7 @@ const Portfolio: React.FC = () => {
 						</motion.div>
 					))}
 				</AnimatePresence>
-			</ul>
+			</div>
 		</div>
 	);
 };
