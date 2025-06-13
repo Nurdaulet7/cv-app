@@ -12,6 +12,7 @@ import { fetchSkills } from '@/features/skills/thunk';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
 import { useAppSelector } from '@/hooks/useAppSelector';
 
+import SkillForm from './SkillForm/SkillsForm';
 import SkillItem from './SkillItem/SkillItem';
 import SkillScale from './SkillScale/SkillScale';
 
@@ -28,6 +29,7 @@ const SkillSection: React.FC = () => {
 
 	return (
 		<SectionLayout id='skills' title='Skills'>
+			<SkillForm />
 			<StatusBlock status={status} error={error}>
 				{skills.length === 0 ? (
 					<EmptyState message='No skills found.' />

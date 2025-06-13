@@ -1,0 +1,41 @@
+@use '@styles/helpers' as *;
+
+.field {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	column-gap: 20px;
+	position: relative;
+	width: 100%;
+
+	label {
+		font-size: $font-size-base;
+		font-weight: 500;
+	}
+
+	&__input {
+		padding: 10px;
+		border: 1px solid $color-muted;
+		border-radius: $border-radius;
+		width: 270px;
+
+		&::placeholder {
+			color: $color-muted;
+		}
+
+		@include mobile {
+			width: 100%;
+		}
+
+		&--error {
+			border-color: $color-danger;
+		}
+	}
+
+	&__error {
+		position: absolute;
+		bottom: -23px;
+		color: $color-danger;
+		font-size: $font-size-sm;
+	}
+}
