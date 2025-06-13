@@ -55,74 +55,31 @@ const SkillsForm: React.FC = () => {
 				validationSchema={validationSchema}
 				onSubmit={handleSubmit}
 			>
-				<Form className={styles.form__body}>
-					<FormikInput
-						name='name'
-						label='Skill name:'
-						placeholder='Enter skill name'
-					/>
-
-					<FormikInput
-						name='range'
-						label='Skill range:'
-						type='number'
-						placeholder='Enter skill range'
-					/>
-
-					<Button
-						text='Add skill'
-						type='submit'
-						className={styles.form__button}
-					/>
-				</Form>
-				{/* {({ errors, touched }) => (
+				{({ errors, touched, isSubmitting }) => (
 					<Form className={styles.form__body}>
-						<div className={styles.form__field}>
-							<label htmlFor='name'>Skill name:</label>
-							<Field
-								id='name'
-								name='name'
-								placeholder='Enter skill name'
-								className={`${styles.form__input} ${
-									touched.name && errors.name
-										? styles['form__input--error']
-										: ''
-								}`}
-							/>
-							<ErrorMessage
-								name='name'
-								component='div'
-								className={styles.form__error}
-							/>
-						</div>
+						<FormikInput
+							name='name'
+							label='Skill name:'
+							placeholder='Enter skill name'
+							disabled={isSubmitting}
+						/>
 
-						<div className={styles.form__field}>
-							<label htmlFor='range'>Skill range:</label>
-							<Field
-								id='range'
-								name='range'
-								type='number'
-								placeholder='Enter skill range'
-								className={`${styles.form__input} ${
-									touched.range && errors.range
-										? styles['form__input--error']
-										: ''
-								}`}
-							/>
-							<ErrorMessage
-								name='range'
-								component='div'
-								className={styles.form__error}
-							/>
-						</div>
+						<FormikInput
+							name='range'
+							label='Skill range:'
+							type='number'
+							placeholder='Enter skill range'
+							disabled={isSubmitting}
+						/>
 
 						<Button
-							text='Add skill'
+							text={isSubmitting ? 'Adding...' : 'Add skill'}
 							type='submit'
 							className={styles.form__button}
+							disabled={isSubmitting}
 						/>
 					</Form>
-				)} */}
+				)}
 			</Formik>
 		</div>
 	);

@@ -8,6 +8,7 @@ interface FormikInputProps {
 	type?: string;
 	placeholder?: string;
 	className?: string;
+	disabled?: boolean;
 }
 
 const FormikInput = ({
@@ -16,6 +17,7 @@ const FormikInput = ({
 	type = 'text',
 	placeholder = '',
 	className = '',
+	disabled = false,
 }: FormikInputProps) => {
 	const [field, meta] = useField(name);
 
@@ -27,6 +29,7 @@ const FormikInput = ({
 				id={name}
 				name={name}
 				type={type}
+				disabled={disabled}
 				placeholder={placeholder}
 				className={`${styles.field__input} ${
 					meta.touched && meta.error ? styles['field__input--error'] : ''

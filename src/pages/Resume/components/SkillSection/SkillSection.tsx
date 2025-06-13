@@ -29,8 +29,8 @@ const SkillSection: React.FC = () => {
 
 	return (
 		<SectionLayout id='skills' title='Skills'>
-			<SkillForm />
 			<StatusBlock status={status} error={error}>
+				<SkillForm />
 				{skills.length === 0 ? (
 					<EmptyState message='No skills found.' />
 				) : (

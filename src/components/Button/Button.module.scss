@@ -26,6 +26,14 @@
 		font-size: 18px;
 	}
 
+	&:disabled {
+		background-color: $color-muted;
+		cursor: not-allowed;
+		@include hover {
+			background-color: $color-muted;
+		}
+	}
+
 	@include hover {
 		background-color: $color-primary;
 	}

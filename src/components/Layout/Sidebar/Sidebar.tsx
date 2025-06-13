@@ -3,6 +3,7 @@ import { FaChevronLeft } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 
 import avatar from '@/assets/images/avatar_medium.png';
+import Button from '@/components/Button/Button';
 import Navigation from '@/components/Navigation/Navigation';
 import PhotoBox from '@/components/PhotoBox/PhotoBox';
 import { ROUTES } from '@/constants/routes';
@@ -48,10 +49,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle }) => {
 				</div>
 				<Navigation />
 
-				<button className={styles['sidebar__button']} onClick={goBack}>
-					<FaChevronLeft />
-					<span>Go back</span>
-				</button>
+				<Button
+					text='Go back'
+					icon={<FaChevronLeft />}
+					type='button'
+					onClick={goBack}
+				/>
 			</div>
 		</nav>
 	);
