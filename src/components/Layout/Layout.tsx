@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { clsx } from 'clsx';
 
 import BackToTop from '../BackToTop/BackToTop';
+import ToggleAdmin from '../ToggleAdmin/ToggleAdmin';
 import Sidebar from './Sidebar/Sidebar';
 
 import styles from './Layout.module.scss';
@@ -32,6 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 			<main className={clsx(styles.layout__main)}>
 				{children}
 				<BackToTop />
+				<ToggleAdmin />
 			</main>
 		</div>
 	);

@@ -50,6 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle }) => {
 				<Navigation />
 
 				<Button
+					className={styles.sidebar__button}
 					text='Go back'
 					icon={<FaChevronLeft />}
 					type='button'

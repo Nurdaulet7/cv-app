@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import EmptyState from '@/components/EmptyState/EmptyState';
 import SectionLayout from '@/components/SectionLayout/SectionLayout';
 import StatusBlock from '@/components/Status/StatusBlock';
+import { selectIsAdmin } from '@/features/auth/selectors';
 import {
 	selectSkills,
 	selectSkillsError,
@@ -20,6 +22,7 @@ const SkillSection: React.FC = () => {
 	const skills = useAppSelector(selectSkills);
 	const status = useAppSelector(selectSkillsStatus);
 	const error = useAppSelector(selectSkillsError);
+	const isAdmin = useSelector(selectIsAdmin);
 
 	const dispatch = useAppDispatch();
 
@@ -30,7 +33,7 @@ const SkillSection: React.FC = () => {
 	return (
 		<SectionLayout id='skills' title='Skills'>
 			<StatusBlock status={status} error={error}>
-				<SkillForm />
+				{isAdmin && <SkillForm />}
 				{skills.length === 0 ? (
 					<EmptyState message='No skills found.' />
 				) : (
